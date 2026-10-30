@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>긍정강화그루밍 관찰과 판단 연습</title>
+<style>
+:root{font-family:system-ui,'Malgun Gothic',sans-serif;color:#17312c;background:#f3f7f5;line-height:1.7}*{box-sizing:border-box}body{margin:0}main{max-width:800px;margin:auto;padding:30px 20px 60px}h1{line-height:1.35;font-size:clamp(26px,5vw,38px)}h2{font-size:22px}section{background:white;border:1px solid #cdded7;border-radius:14px;padding:24px;margin:22px 0}label{display:block;font-weight:650;margin:18px 0 6px}textarea{width:100%;min-height:110px;padding:12px;font:inherit;border:1px solid #758b83;border-radius:6px}button,a.button{background:#185b48;color:white;border:0;border-radius:7px;padding:12px 18px;font:inherit;cursor:pointer;display:inline-block;text-decoration:none;margin:8px 8px 0 0}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #e09618;outline-offset:3px}.note{color:#425b52;font-size:15px}.tag{color:#185b48;font-weight:700}#feedback{background:#eaf4ee;padding:18px;border-radius:8px;margin-top:16px}#message{min-height:28px}footer{font-size:14px;color:#425b52} @media print{button,a.button{display:none}body{background:white}section{break-inside:avoid}main{padding:0}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body><main>
+<p class="tag">긍정강화그루밍 | 관찰과 판단 연습</p>
+<h1>무엇을 보았고,<br>왜 그렇게 판단했나요?</h1>
+<p>사례를 읽고 자신의 답을 먼저 작성하세요. 비교 질문을 확인한 뒤 수정한 내용을 함께 남깁니다.</p>
+<p class="note">교수자 검토 전 연습용 견본입니다. 실제 수업에서는 교수자가 승인한 사례와 기준으로 바꿔 사용하세요. 실제 동물에 적용할 처치 지침을 제공하는 자료가 아닙니다.</p>
+<section><h2>1. 사례 읽기</h2>
+<p id="scenario">시연 영상에서 미용 도구가 앞발 쪽으로 가까워지자 반려견이 앞발을 뒤로 옮기는 장면이 보였습니다. 영상에는 이 장면 전후의 모든 상황이 담겨 있지는 않습니다.</p>
+<p>보이는 행동과 자신이 추측한 의미를 구분해 적어보세요. 다음 행동은 수업에서 배운 기준을 근거로 설명하세요.</p>
+</section>
+<section><h2>2. 나의 첫 판단</h2>
+<label for="fact">직접 관찰할 수 있는 사실은 무엇인가요?</label><textarea id="fact" placeholder="화면이나 사례에 실제로 제시된 행동을 적으세요."></textarea>
+<label for="interpretation">어떻게 해석했으며, 더 확인할 것은 무엇인가요?</label><textarea id="interpretation" placeholder="해석의 근거와 아직 알 수 없는 점을 구분해 적으세요."></textarea>
+<label for="action">다음에 무엇을 하겠으며, 그 이유는 무엇인가요?</label><textarea id="action" placeholder="수업에서 배운 기준을 근거로 설명하세요."></textarea>
+<button id="show" type="button">첫 답을 기록하고 비교 질문 보기</button>
+<div id="feedback" hidden><h3>내 답과 비교할 질문</h3>
+<p>앞발을 뒤로 옮겼다는 관찰과 그 행동의 의미에 대한 해석을 구분했나요? 한 장면만으로 알 수 없는 점은 무엇인가요? 다음 행동의 근거를 교재나 교수자가 제시한 기준에서 찾았나요?</p>
+<p>짝과 판단을 비교하고 교수자의 설명을 들은 뒤, 아래에 바꾼 점과 이유를 적으세요. 이 자료는 자동으로 정답이나 점수를 판정하지 않습니다.</p></div>
+</section>
+<section><h2>3. 피드백 후 수정</h2>
+<label for="revision">유지하거나 바꾼 판단과 그 이유</label><textarea id="revision" placeholder="동료와 교수자의 피드백을 받은 뒤 작성하세요."></textarea>
+<button id="download" type="button">기록을 TXT 파일로 저장</button>
+<button id="copy" type="button">기록 복사</button>
+<a id="submit" class="button" hidden target="_blank" rel="noopener noreferrer">제출 양식 열기</a>
+<p id="message" role="status" aria-live="polite"></p>
+<p class="note">입력 내용은 교수자에게 자동 전송되거나 서버에 저장되지 않습니다. 새로고침하거나 닫기 전에 기록을 저장하거나 복사하세요. 저장한 파일을 학교 LMS에 제출하거나, 교수자가 안내한 제출 양식에 내용을 옮겨 제출하세요. 저장과 복사만으로 제출이 완료되지는 않습니다.</p>
+</section>
+<footer>학생 이름이나 학번은 공개 페이지에 입력하지 않습니다. 제출할 때 학교에서 안내한 방식으로 본인을 표시하세요. 비교 질문과 학습자료의 소스는 공개되어 있으므로 평가용 보안 문항에는 사용하지 않습니다.</footer>
+</main><script>
+// 제출 양식을 만든 뒤 아래 빈 따옴표 안에 응답자용 HTTPS 링크를 넣으세요.
+const SUBMIT_URL = "";
+const ids = ['fact','interpretation','action'];
+let firstAnswer = null;
+const el = id => document.getElementById(id);
+const message = text => { el('message').textContent = text; };
+el('show').addEventListener('click', () => {
+ const missing = ids.find(id => !el(id).value.trim());
+ if(missing){ message('첫 판단의 세 항목을 모두 작성한 뒤 비교 질문을 확인하세요.'); el(missing).focus(); return; }
+ if(!firstAnswer) firstAnswer = Object.fromEntries(ids.map(id => [id,el(id).value.trim()]));
+ ids.forEach(id => { el(id).readOnly = true; });
+ el('feedback').hidden = false;
+ el('show').textContent = '첫 판단이 기록되었습니다';
+ message('첫 답은 유지됩니다. 바꾼 내용은 피드백 후 수정란에 적으세요.');
+});
+function record(){
+ const data=firstAnswer || Object.fromEntries(ids.map(id=>[id,el(id).value.trim()]));
+ return ['긍정강화그루밍 관찰과 판단 연습','사례: '+el('scenario').textContent,'관찰한 사실: '+data.fact,'해석과 추가 확인: '+data.interpretation,'다음 행동과 이유: '+data.action,'피드백 후 수정: '+el('revision').value.trim(),'비교 질문 확인: '+(firstAnswer?'확인함':'확인 전')].join('\n\n');
+}
+el('download').addEventListener('click',()=>{
+ const url=URL.createObjectURL(new Blob(['\uFEFF'+record()],{type:'text/plain;charset=utf-8'}));
+ const a=document.createElement('a'); a.href=url; a.download='grooming-observation.txt'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1000); message('다운로드 폴더에서 파일을 확인하세요. 제출은 별도로 해야 합니다.');
+});
+el('copy').addEventListener('click',async()=>{
+ try{ await navigator.clipboard.writeText(record()); message('기록을 복사했습니다. 제출 양식에 붙여넣은 뒤 제출하세요.'); }
+ catch{ message('이 브라우저에서는 복사가 제한됩니다. TXT 파일로 저장하거나 입력 내용을 직접 선택해 복사하세요.'); }
+});
+if(/^https:\/\//i.test(SUBMIT_URL)){ el('submit').href=SUBMIT_URL; el('submit').hidden=false; }
+</script></body></html>
