@@ -14,6 +14,15 @@
 <h1>무엇을 보았고,<br>왜 그렇게 판단했나요?</h1>
 <p>사례를 읽고 자신의 답을 먼저 작성하세요. 비교 질문을 확인한 뒤 수정한 내용을 함께 남깁니다.</p>
 <p class="note">교수자 검토 전 연습용 견본입니다. 실제 수업에서는 교수자가 승인한 사례와 기준으로 바꿔 사용하세요. 실제 동물에 적용할 처치 지침을 제공하는 자료가 아닙니다.</p>
+<section id="sheetSubmission">
+<h2>교수자에게 학습기록 제출</h2>
+<p>기록 앱에서 작성하고 저장하면 교수자 Google Sheets에 전달됩니다. 수정한 내용은 최신 기록에 반영되고 이전 내용은 수정 이력에 남습니다.</p>
+<a id="recordApp" class="button" hidden target="_blank" rel="noopener noreferrer">학습기록 앱 열기</a>
+<p id="connectionStatus" role="status">아직 Google Sheets 연결을 준비하고 있습니다. 아래 개인 연습 기록은 교수자에게 자동 전송되지 않습니다.</p>
+<p class="note" id="connectedHelp" hidden>앱에서 교수자가 안내한 참여코드와 개인키를 입력하세요. 저장 완료를 확인한 뒤 창을 닫습니다. 아래 개인 연습과 앱의 입력 내용은 자동으로 서로 옮겨지지 않습니다.</p>
+<p class="note"><a href="./setup.html">교수자 연결 안내</a></p>
+</section>
+<details><summary style="font-weight:650;cursor:pointer;padding:12px">개인 연습과 TXT 저장 열기 (시트 미전송)</summary>
 <section><h2>1. 사례 읽기</h2>
 <p id="scenario">시연 영상에서 미용 도구가 앞발 쪽으로 가까워지자 반려견이 앞발을 뒤로 옮기는 장면이 보였습니다. 영상에는 이 장면 전후의 모든 상황이 담겨 있지는 않습니다.</p>
 <p>보이는 행동과 자신이 추측한 의미를 구분해 적어보세요. 다음 행동은 수업에서 배운 기준을 근거로 설명하세요.</p>
@@ -35,7 +44,7 @@
 <p id="message" role="status" aria-live="polite"></p>
 <p class="note">입력 내용은 교수자에게 자동 전송되거나 서버에 저장되지 않습니다. 새로고침하거나 닫기 전에 기록을 저장하거나 복사하세요. 저장한 파일을 학교 LMS에 제출하거나, 교수자가 안내한 제출 양식에 내용을 옮겨 제출하세요. 저장과 복사만으로 제출이 완료되지는 않습니다.</p>
 </section>
-<footer>학생 이름이나 학번은 공개 페이지에 입력하지 않습니다. 제출할 때 학교에서 안내한 방식으로 본인을 표시하세요. 비교 질문과 학습자료의 소스는 공개되어 있으므로 평가용 보안 문항에는 사용하지 않습니다.</footer>
+</details><footer>학생 이름이나 학번은 공개 페이지에 입력하지 않습니다. 제출할 때 학교에서 안내한 방식으로 본인을 표시하세요. 비교 질문과 학습자료의 소스는 공개되어 있으므로 평가용 보안 문항에는 사용하지 않습니다.</footer>
 </main><script>
 // 제출 양식을 만든 뒤 아래 빈 따옴표 안에 응답자용 HTTPS 링크를 넣으세요.
 const SUBMIT_URL = "";
@@ -65,4 +74,13 @@ el('copy').addEventListener('click',async()=>{
  catch{ message('이 브라우저에서는 복사가 제한됩니다. TXT 파일로 저장하거나 입력 내용을 직접 선택해 복사하세요.'); }
 });
 if(/^https:\/\//i.test(SUBMIT_URL)){ el('submit').href=SUBMIT_URL; el('submit').hidden=false; }
+</script><script src="./config.js"></script><script>
+try {
+ const u=new URL(window.CLASS_APP_URL);
+ if(u.protocol==='https:'&&u.hostname==='script.google.com'&&/^\/macros\/s\/[^/]+\/exec$/.test(u.pathname)&&!u.search&&!u.hash){
+  const a=document.getElementById('recordApp');a.href=u.href;a.hidden=false;
+  document.getElementById('connectionStatus').textContent='교수자가 설정한 기록 앱으로 이동합니다. 기록 작성과 Google Sheets 저장은 연결된 앱에서 진행합니다.';
+  document.getElementById('connectedHelp').hidden=false;
+ }
+}catch{}
 </script></body></html>
