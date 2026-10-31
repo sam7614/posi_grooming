@@ -92,7 +92,7 @@ function config_(){
 }
 function hash_(s){return Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256,s,Utilities.Charset.UTF_8).map(function(b){return ('0'+(b&255).toString(16)).slice(-2);}).join('');}
 function authenticate_(auth){
- if(!auth||!/^[A-Za-z0-9_-]{1,40}$/.test(String(auth.code||''))||!/^[a-f0-9]{64}$/.test(String(auth.key||'')))throw new Error('참여코드 또는 개인키를 확인하세요.');
+ if(!auth||!/^[A-Za-z0-9_-]{1,40}$/.test(String(auth.code||''))||!/^[A-Za-z0-9_-]{6,64}$/.test(String(auth.key||'')))throw new Error('참여코드 또는 개인키를 확인하세요.');
  var h=hash_(auth.key),r=rows_(book_().getSheetByName(NAMES_.people)).find(function(r){return String(r[0])===auth.code&&String(r[2])===h&&String(r[3])==='ACTIVE';});
  if(!r)throw new Error('참여코드 또는 개인키를 확인하세요.');
  return {code:String(r[0]),name:String(r[1])};
